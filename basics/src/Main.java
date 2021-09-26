@@ -1,3 +1,5 @@
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 public class Main {
     public static void main(String[] args) {
         int dogCount = 1;
@@ -10,6 +12,7 @@ public class Main {
         System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCount) + ".");
 
         flipNHeads(2);
+        localDate();
     }
 
      public static String pluralize(String Str, int inter) {
@@ -40,5 +43,17 @@ while ( heads!=inters){
          System.out.println( ("It took " + flip + "flips to flip" + inters + "head in a row "));
 
 }
+
+public static void localDate(){
+        while (true){
+
+            LocalDateTime now = LocalDateTime.now();
+            String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+            System.out.println(time);
+        }
+
+}
+
+
 
 }
