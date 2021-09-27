@@ -12,7 +12,7 @@ public class Library {
 
             }
 
-    public  int[] roll (int ints) {
+    public static int[] roll(int ints) {
         Random r = new Random();
         int low = 1;
         int high = 6;
@@ -24,8 +24,57 @@ public class Library {
         return rolls;
         }
 
-
+        public static boolean containsDuplicates (int[] elements) {
+        for (int i = 0 ; i < elements.length ; i++) {
+            int a = elements[i];
+            for (int j = i+1 ; j < elements.length ; j++ ) {
+                if (a == elements[j]){
+                    return true ;
+                }
+            }
+        }
+        return false;
     }
+        public static int calculating (int[] avg) {
+        int total = 0;
+        for (int i = 0 ; i < avg.length ; i++) {
+            total = (total + avg[i]);
+        }
+            total=  total/ avg.length;
+        return total;
+        }
+
+    public static int[] lowestAvg(int[][] arr) {
+        float[] arrOfAvg = new float[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            int oneSum = 0;
+            int oneArrLength = arr[i].length;
+            for (int j = 0; j < oneArrLength; j++) {
+                oneSum = oneSum + arr[i][j];
+
+            }
+            arrOfAvg[i] = (float) oneSum / oneArrLength;
+        }
+        float compare = arrOfAvg[0];
+        for (float avg : arrOfAvg) {
+            if (compare >= avg) {
+                compare = avg;
+            }
+        }
+        int arrIndex = 0;
+        for (int i = 0; i < arrOfAvg.length; i++) {
+            if (compare == arrOfAvg[i]) {
+                arrIndex = i;
+            }
+        }
+        return arr[arrIndex];
+    }
+
+}
+
+
+
 
 
 
