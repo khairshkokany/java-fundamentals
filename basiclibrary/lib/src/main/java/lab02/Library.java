@@ -4,49 +4,53 @@
 package lab02;
 
 
-import java.util.Random;
+import java.util.*;
 
 public class Library {
     public boolean someLibraryMethod() {
         return true;
 
-            }
+    }
 
     public static int[] roll(int ints) {
         Random r = new Random();
         int low = 1;
         int high = 6;
 
-        int [] rolls = new int[ints];
-        for (int i = 0 ; i < ints ; i++) {
-        rolls[i] = r.nextInt(high-low) + low ;
+        int[] rolls = new int[ints];
+        for (int i = 0; i < ints; i++) {
+            rolls[i] = r.nextInt(high - low) + low;
         }
         return rolls;
-        }
+    }
 
-        public static boolean containsDuplicates (int[] elements) {
-        for (int i = 0 ; i < elements.length ; i++) {
+    public static boolean containsDuplicates(int[] elements) {
+        for (int i = 0; i < elements.length; i++) {
             int a = elements[i];
-            for (int j = i+1 ; j < elements.length ; j++ ) {
-                if (a == elements[j]){
-                    return true ;
+            for (int j = i + 1; j < elements.length; j++) {
+                if (a == elements[j]) {
+                    return true;
                 }
             }
         }
         return false;
     }
-        public static int calculating (int[] avg) {
+
+    public static int calculating(int[] avg) {
         int total = 0;
-        for (int i = 0 ; i < avg.length ; i++) {
+        for (int i = 0; i < avg.length; i++) {
             total = (total + avg[i]);
         }
-            total=  total/ avg.length;
+        total = total / avg.length;
         return total;
-        }
+    }
 
     public static int[] lowestAvg(int[][] arr) {
         float[] arrOfAvg = new float[arr.length];
-
+int [] max = arr[0];
+int max1 = arr[0][0];
+        System.out.println(max);
+        System.out.println(max1);
         for (int i = 0; i < arr.length; i++) {
             int oneSum = 0;
             int oneArrLength = arr[i].length;
@@ -71,7 +75,68 @@ public class Library {
         return arr[arrIndex];
     }
 
-}
+
+   public static int hashMethod (int[][] arr){
+
+
+       Set<Integer> data = new HashSet<>();
+
+       int maxValue = Integer.MIN_VALUE;
+       int minValue = Integer.MAX_VALUE;
+       for(int i=0;i < arr.length;i++){
+           for (int j=0;j< arr[i].length;j++){
+               data.add(arr[i][j]);
+
+               if(arr[i][j] > maxValue){
+                   maxValue = arr[i][j];
+               }else if (arr[i][j] < minValue){
+                   minValue = arr[i][j];
+               }
+           }
+
+       }
+       System.out.println("this is the max " + maxValue);
+       System.out.println("this is the min " + minValue);
+       for (int i = minValue ; i < maxValue ; i++){
+
+           if (!data.contains(i)){
+
+               System.out.println("Never saw temperature: " + i);
+           }
+       }
+
+        return maxValue;
+
+   }
+
+
+   public static String tally (List<String> votes){
+        Map<String,Integer> vote = new HashMap<>();
+       for (String name:votes) {
+           if (! vote.containsKey(name)){
+               vote.put(name,1) ;
+           }else {
+               int value = vote.get(name);
+               value++;
+               vote.put(name,value);
+           }
+       }
+       String mostVotes ="";
+       for (Map.Entry<String,Integer> e: vote.entrySet() ) {
+
+           if (e.getValue() == Collections.max(vote.values())){
+
+               mostVotes = e.getKey();
+           }
+
+       }
+       return mostVotes;
+
+   }
+
+   }
+
+
 
 
 
