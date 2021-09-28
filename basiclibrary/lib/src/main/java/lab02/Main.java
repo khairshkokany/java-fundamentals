@@ -20,6 +20,7 @@ public class Main {
                 {65, 56, 55, 52, 55, 62, 57}
         };
         System.out.println(Arrays.toString(Library.lowestAvg(weeklyMonthTemperatures)));
+        Library.hashMethod(weeklyMonthTemperatures);
     }
 
 
