@@ -76,7 +76,7 @@ int max1 = arr[0][0];
     }
 
 
-   public static void hashMethod (int[][] arr){
+   public static int hashMethod (int[][] arr){
 
 
        Set<Integer> data = new HashSet<>();
@@ -105,7 +105,7 @@ int max1 = arr[0][0];
            }
        }
 
-
+        return maxValue;
 
    }
 
@@ -133,8 +133,6 @@ int max1 = arr[0][0];
        return mostVotes;
 
    }
-
-
 
    }
 
