@@ -134,33 +134,6 @@ int max1 = arr[0][0];
 
    }
 
-//    public static String tally(List<String> votes) {
-//        Map<String,Integer> count  = new HashMap<>() ;
-//        for ( String word : votes) {
-//            if (! count.containsKey(word)) {
-//                count.put(word, 1 ) ;
-//            }
-//
-//            else {
-//                int value = count.get(word) ;
-//                value++ ;
-//
-//                count.put(word, value) ;
-//            }
-//        }
-//        String mostCommons="";
-//
-//        for ( Map.Entry<String,Integer> e : count.entrySet() ) {
-//
-//            if (e.getValue() == Collections.max(count.values() )){
-//
-//                mostCommons=e.getKey() ;
-//            }
-//        }
-//
-//        return mostCommons;
-//
-//    }
 
 
    }
