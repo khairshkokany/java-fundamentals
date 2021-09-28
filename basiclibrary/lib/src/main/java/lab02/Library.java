@@ -4,9 +4,7 @@
 package lab02;
 
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -97,7 +95,8 @@ int max1 = arr[0][0];
            }
 
        }
-
+       System.out.println("this is the max " + maxValue);
+       System.out.println("this is the min " + minValue);
        for (int i = minValue ; i < maxValue ; i++){
 
            if (!data.contains(i)){
@@ -106,10 +105,62 @@ int max1 = arr[0][0];
            }
        }
 
-       System.out.println("this is the max " + maxValue);
-       System.out.println("this is the min " + minValue);
+
 
    }
+
+
+   public static String tally (List<String> votes){
+        Map<String,Integer> vote = new HashMap<>();
+       for (String name:votes) {
+           if (! vote.containsKey(name)){
+               vote.put(name,1) ;
+           }else {
+               int value = vote.get(name);
+               value++;
+               vote.put(name,value);
+           }
+       }
+       String mostVotes ="";
+       for (Map.Entry<String,Integer> e: vote.entrySet() ) {
+
+           if (e.getValue() == Collections.max(vote.values())){
+
+               mostVotes = e.getKey();
+           }
+
+       }
+       return mostVotes;
+
+   }
+
+//    public static String tally(List<String> votes) {
+//        Map<String,Integer> count  = new HashMap<>() ;
+//        for ( String word : votes) {
+//            if (! count.containsKey(word)) {
+//                count.put(word, 1 ) ;
+//            }
+//
+//            else {
+//                int value = count.get(word) ;
+//                value++ ;
+//
+//                count.put(word, value) ;
+//            }
+//        }
+//        String mostCommons="";
+//
+//        for ( Map.Entry<String,Integer> e : count.entrySet() ) {
+//
+//            if (e.getValue() == Collections.max(count.values() )){
+//
+//                mostCommons=e.getKey() ;
+//            }
+//        }
+//
+//        return mostCommons;
+//
+//    }
 
 
    }
