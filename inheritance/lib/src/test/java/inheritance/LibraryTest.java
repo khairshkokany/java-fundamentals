@@ -45,6 +45,74 @@ class LibraryTest {
     Review review = new Review("The burger is good but not juciy so you can be more better than this ","Khair Shkokany",3);
     assertEquals("Review{body='The burger is good but not juciy so you can be more better than this ', author='Khair Shkokany', rating=3}",String.valueOf(review));
 }
+    @Test public void constructorShops() {
+
+
+        Shops shops = new Shops("City Center","The Location in Jardinz","$$");
+        String name = "City Center";
+        String price = "$$";
+        String description = "The Location in Jardinz";
+        assertEquals(name,shops.getName());
+        assertEquals(description,shops.getDescription());
+        assertEquals(price,shops.getPriceCategory());
+
+    }
+    @Test public void toStringShops() {
+        Shops shops1 = new Shops("MostWanted" , "the location in DownCity","$$");
+        assertEquals("Shops{name='MostWanted', rating=the location in DownCity, category='$$'}",String.valueOf(shops1));
+    }
+
+    @Test public void constructorTheater() {
+
+
+        Theater theater = new Theater("Khair Shkokany");
+        String name = "Khair Shkokany";
+        assertEquals(name,theater.getTheaterName());
+
+    }
+    @Test public void arrayListArrayMoviesAdded() {
+        Theater khairMovies = new Theater("Khair Shkokany");
+        khairMovies.addMovies("Suicide Squad");
+        assertEquals(khairMovies.getMoviesArray().size(),1,khairMovies.getMoviesArray().size());
+
+
+    }
+    @Test public void arrayListArrayMoviesRemoved(){
+
+        Theater khairMovies = new Theater("Khair Shkokany");
+        khairMovies.addMovies("Suicide Squad");
+//        khairMovies.addMovies("Suicide");
+//        khairMovies.addMovies("Suicide S");
+        khairMovies.removeMovies("Suicide Squad");
+        int sizes = khairMovies.getMoviesArray().size();
+    assertEquals(khairMovies.getMoviesArray().size(),sizes);
+
+
+    }
+
+    @Test public void arrayListArrayMoviesAddedReview(){
+
+            Theater movies = new Theater("Khair Shkokany");
+            Review review = new Review("Drama is the best ","Khair Shkokany",5);
+            movies.addReview(review);
+            assertEquals( movies.getReviews().size(), 1, movies.getReviews().size());
+
+
+
+    }
+
+    @Test public void toStringTheater() {
+        Theater khairMovies = new Theater("Khair List Movies");
+        khairMovies.addMovies("Joker");
+        Review review = new Review("Drama is the best ","Khair shkokany",5);
+        khairMovies.addReviewMovies(review,"Joker");
+
+        assertEquals("Theater{theaterName='Khair List Movies', moviesArray=[Joker], reviews=[Review{body='Drama is the best ', author='Khair shkokany', rating=5}]}",String.valueOf(khairMovies));
+    }
+
+
+
+
 
 
 
